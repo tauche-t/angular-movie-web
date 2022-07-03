@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="loading" class="loader">
+    <h1>Loading...</h1>
+  </div>
+
+  <div *ngIf="movies" class="movies">
+    <div *ngFor="let movie of movies">
+      <app-movie [id]="movie.id" [genres]="movie.genres" [coverImg]="movie.medium_cover_image" [title]="movie.title" [year]="movie.year" [summary]="movie.summary"></app-movie>
+    </div>
+  </div>
+</div>

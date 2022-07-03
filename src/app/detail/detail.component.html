@@ -1,0 +1,23 @@
+<div *ngIf="loading" class="loader">
+  <h1>Loading...</h1>
+</div>
+
+<div *ngIf="movie" class="container" style="backgroundImage: url({{movie.background_image_original}})">
+  <div class="movie">
+    <div>
+      <img src="{{ movie.medium_cover_image }}" alt="{{ movie.title }}" class="movie__img">
+    </div>
+    <div>
+      <h2 class="movie__title">{{movie.title}}</h2>
+      <div class="details">
+        <ul class="movie__genres">
+          <li *ngFor="let genre of movie.genres">
+            {{ genre }}
+          </li>
+        </ul>
+        <h3 class="movie__rating">⭐ {{ movie.rating }}</h3>
+      </div>
+      <p>{{ movie.description_full }}</p>
+    </div>
+  </div>
+</div>
